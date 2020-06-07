@@ -1,4 +1,5 @@
 ﻿export default {
+    user: "Billy",
     dogs: [
         {
             "breed": "Springer Spaniel",

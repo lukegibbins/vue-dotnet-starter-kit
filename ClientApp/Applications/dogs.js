@@ -1,9 +1,10 @@
 ﻿import Vue from "vue"
+import store from "../Stores/PetStore"
+
 import PetStore from "../Components/PetStore/PetStore.vue"
-import Store from "../Stores/PetStore"
 
 new Vue({
     el: "#app",
-    Store,
-    render: p => p(PetStore)
+    store,
+    render: h => h(PetStore)
 })

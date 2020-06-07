@@ -1,19 +1,31 @@
 ﻿<template>
     <div>
-        <h1>Webpack Testing</h1>
-        <p>This is purely a test to see if we can get webpack working.</p>
+        <h3>Dog Collection: {{user}}</h3>
+         <table-view :dogs="dogs"></table-view>  
     </div>
 </template>
 
 
 <script>
+    import TableView from "./Components/TableView.vue" 
+    import { mapGetters } from "vuex";
+
     export default {
         name: "PetStore",
 
+        components: {
+            "table-view": TableView
+        },
+
         computed: {
-            dogs() {
-                return this.$store.getters.dogs
-            }
+            ...mapGetters({
+                user: "getUser",
+                dogs: "getDogs"
+            })
         }
     }
 </script>
+
+<style>
+
+</style>
